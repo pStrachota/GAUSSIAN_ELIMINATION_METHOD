@@ -5,8 +5,18 @@ import java.util.List;
 import java.util.Scanner;
 import org.javatuples.Pair;
 
+/**
+ * Input reader is used to read matrix and its number of unknowns
+ * from examples directory
+ */
+
 public class InputReader {
 
+    /**
+     * @param filename
+     * @return Pair with integer (number of unknowns) and double list (matrix)
+     * @throws FileNotFoundException
+     */
     public static Pair<Integer, List<Double>> read(String filename) throws FileNotFoundException {
         Pair<Integer, List<Double>> matrixAndN = null;
         int n = 0;

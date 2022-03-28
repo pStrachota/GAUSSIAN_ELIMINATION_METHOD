@@ -1,5 +1,12 @@
 import java.util.List;
 
+/**
+ * Gaussian algorithm function that we access from main
+ * @param matrix matrix from file
+ * @param n number of unknowns
+ * @param results list of doubles that stores results (if they exist)
+ * @return boolean - true if there is solutions, false otherwise
+ */
 public class GaussianEliminationMethod {
 
     private static final double epsilon = 0.000001;
@@ -46,6 +53,12 @@ public class GaussianEliminationMethod {
         matrix.setRow(ielMax, temp);
     }
 
+    /**
+     * this function is used for eliminating subsequent elements in matrix
+     * @param matrix matrix from file
+     * @param n number of unknowns
+     * @param rowIndex particular row index
+     */
     private static void eliminate(Matrix matrix, int n, int rowIndex) {
         for (int i = rowIndex + 1; i < n; i++) {
             double m = matrix.getFieldValue(i, rowIndex) / matrix.getFieldValue(rowIndex, rowIndex);
@@ -57,6 +70,12 @@ public class GaussianEliminationMethod {
         }
     }
 
+    /**
+     *
+     * @param matrix matrix from file
+     * @param n number of unknowns
+     * @return boolean - true if there are solutions, false otherwise
+     */
     private static boolean CheckIfNotCorrect(Matrix matrix, int n) {
         for (int i = n - 1; i >= 0; i--) {
             if (Math.abs(matrix.getFieldValue(i, i)) < epsilon) {
@@ -71,6 +90,14 @@ public class GaussianEliminationMethod {
         return false;
     }
 
+    /**
+     * this function is called when checkIfNotCorrect returns false
+     * it stores solutions in results list
+     * @param matrix matrix matrix from file
+     * @param n n number of unknowns
+     * @param results list of doubles that stores results
+     * @return results
+     */
     private static List<Double> fillResultsWhenPossible(Matrix matrix, int n,
                                                         List<Double> results) {
         double valueToAdd = matrix.getFieldValue(n - 1, n) /

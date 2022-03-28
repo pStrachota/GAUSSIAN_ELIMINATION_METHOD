@@ -13,6 +13,8 @@ public class Main {
         System.out.println("Podaj liczbe układów równań" +
                 "których chcesz otrzymać rozwiązanie");
 
+        //we have two additional files, that's why from 1 to 12
+
         int numberOfEquations = 0;
         System.out.println("Mozesz wybrac liczbe z przedzialu od 1 do 12");
         do {

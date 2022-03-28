@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Matrix class represents one matrix object
+ * in our case matrix is list of doubles
+ * getRow and setRow are used in Gaussian algorithm
+ * when swapping rows
+ */
 public class Matrix {
 
     private int matrixSize;
