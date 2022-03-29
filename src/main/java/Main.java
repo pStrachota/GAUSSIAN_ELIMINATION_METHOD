@@ -13,14 +13,14 @@ public class Main {
         System.out.println("Podaj liczbe układów równań" +
                 "których chcesz otrzymać rozwiązanie");
 
-        //we have two additional files, that's why from 1 to 12
+        //we have five additional files, that's why from 1 to 15
 
         int numberOfEquations = 0;
-        System.out.println("Mozesz wybrac liczbe z przedzialu od 1 do 12");
+        System.out.println("Mozesz wybrac liczbe z przedzialu od 1 do 15");
         do {
             String userInput = scanner.nextLine();
             numberOfEquations = Integer.parseInt(userInput);
-        } while (numberOfEquations > 12 || numberOfEquations <= 0);
+        } while (numberOfEquations > 15 || numberOfEquations <= 0);
 
         System.out.println("------------------------------------------------");
         System.out.println("------------------------------------------------");
